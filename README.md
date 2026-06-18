@@ -1,8 +1,8 @@
-# Trabalho Grau B
-# Engenharia de Software
-# Luíza Birck e Tomás Strieder
-
 # taskmanager
+
+Trabalho Grau B — Engenharia de Software  
+Luíza Birck e Tomás Strieder
+
 API REST para colaboração em tarefas com cadastro e autenticação de usuários.
 
 ---
@@ -30,17 +30,17 @@ copy .env.example .env
 docker compose up --build -d
 ```
 
-# 4. Swagger UI
+### 4. Swagger UI
 A API estará disponpível em `http://localhost:8000/docs`.
 
-# 5. Testando endpoints
+### 5. Testando endpoints
 - Para testar os endpoints:
     - Realize o login (`/auth/login`) 
     - Copie o `access_token`
     - Clique em **Authorize** (no topo da página)
     - Cole o token
 
-# 8. Extras
+### 8. Extras
 - Para consultar os logs (ou utilizar a interface do Docker)
 ```bash
 docker compose logs app -f
@@ -83,7 +83,7 @@ alembic upgrade head
 uvicorn app.main:app --reload
 ```
 
-# 8. Swagger UI
+### 8. Swagger UI
 A API estará disponpível em `http://localhost:8000/docs`.
 A partir daí o funcionamento é o mesmo.
 
@@ -92,7 +92,7 @@ A partir daí o funcionamento é o mesmo.
 ## Testes
 Para rodar os testes automatizados:
 
-# Se rodando o projeto em Docker:
+### Se rodando o projeto em Docker:
 ```bash
 docker compose exec app pytest
 
@@ -100,7 +100,7 @@ docker compose exec app pytest
 docker compose run --rm app pytest --cov=app --cov-report=term-missing
 ```
 
-# Ou, se rodando localmente:
+### Ou, se rodando localmente:
 
 ```bash
 pytest
@@ -117,14 +117,14 @@ Os seguintes scripts ,localizados na root do projeto, foram desenvolvidos para p
 - clean.py: Limpa o banco de todos os usuários, tarefas e comentários.
 Para rodar, simplesmente:
 
-# Em Docker:
+### Em Docker:
 ```bash
 docker compose exec app python seed.py
 
 docker compose exec app python clean.py
 ```
 
-# Localmente:
+### Localmente:
 ```bash
 # Ativar o ambiente caso não ativo
 .venv\Scripts\activate
