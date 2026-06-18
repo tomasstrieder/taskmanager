@@ -17,16 +17,20 @@ API REST para colaboração em tarefas com cadastro e autenticação de usuário
 
 **Pré-requisitos**: Docker Desktop, Git
 
+### 1. Clonar repositório
 ```bash
-# 1. Clonar repositório
 git clone <url>
 cd taskmanager
+```
 
-# 2. Criar .env
+### 2. Criar .env
+```bash
 copy .env.example .env
 # Opcionalmente abrir .env e definir uma SECRET_KEY
+```
 
-# 3. Rodar
+### 3. Rodar
+```bash
 docker compose up --build -d
 ```
 
@@ -40,7 +44,7 @@ A API estará disponpível em `http://localhost:8000/docs`.
     - Clique em **Authorize** (no topo da página)
     - Cole o token
 
-### 8. Extras
+### 6. Extras
 - Para consultar os logs (ou utilizar a interface do Docker)
 ```bash
 docker compose logs app -f
@@ -56,30 +60,42 @@ docker compose down
 
 **Pré-requisitos**: Python 3.12+, Git, PostgreSQL
 
+### 1. Clonar o repositório
 ```bash
-# 1. Clonar o repositório
 git clone <url>
 cd taskmanager
+```
 
-# 2. Criar o ambiente virtual
+### 2. Criar o ambiente virtual
+```bash
 python -m venv .venv
 .venv\Scripts\activate
+```
 
-# 3. Instalar dependências
+### 3. Instalar dependências
+```bash
 pip install -r requirements.txt
+```
 
-# 4. Criar .env
+### 4. Criar .env
+```bash
 cp .env.example .env
 # Opcionalmente abrir .env e definir uma SECRET_KEY
+```
 
-# 5. Abrir PostgreSQL e executar o seguinte para criar os bancos de dados:
+### 5. Abrir PostgreSQL e executar o seguinte para criar os bancos de dados:
+```bash
   CREATE DATABASE taskmanager;
   CREATE DATABASE taskmanager_test;
+```
 
-# 6. Realizar migrações
+### 6. Realizar migrações
+```bash
 alembic upgrade head
+```
 
-# 7. Rodar o servidor
+### 7. Rodar o servidor
+```bash
 uvicorn app.main:app --reload
 ```
 
